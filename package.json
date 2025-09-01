@@ -1,0 +1,40 @@
+{
+  "name": "[REPLACE]",
+  "version": "0.0.0",
+  "author": "Roman Shaposhnikov <roman_shaposhnikov_pub@mail.ru>",
+  "license": "MIT",
+  "description": "[REPLACE]",
+  "type": "module",
+  "keywords": [],
+  "homepage": "https://github.com/roman-shaposhnikov/[REPLACE]#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/roman-shaposhnikov/[REPLACE]"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "types": "./_types/index.d.ts",
+      "require": "./_cjs/index.js",
+      "import": "./_esm/index.js",
+      "default": "./_esm/index.js"
+    }
+  },
+  "scripts": {
+    "init": "./config/init.sh",
+    "test": "npm run test:types && npm run test:run",
+    "test:types": "tsc --noEmit",
+    "test:run": "vitest run --cnfig ./config/test/vitest.config.ts",
+    "test:watch": "vitest watch --config ./config/test/vitest.config.ts",
+    "build": "./config/build/build.sh"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.1",
+    "tsc-alias": "^1.8.10",
+    "tsconfig": "github:roman-shaposhnikov/tsconfig",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  }
+}
